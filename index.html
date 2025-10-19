@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎉 Happy Birthday!</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: url("butandeng.jpg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+
+  /* add slight dark overlay for readability */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+  }
+
+  h1, p, .cake {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 3em;
+    animation: fadeIn 2s ease-in forwards, glow 2s ease-in-out infinite alternate;
+    opacity: 0;
+  }
+
+  p {
+    font-size: 1.3em;
+    text-align: center;
+    max-width: 500px;
+    animation: fadeIn 3s ease-in forwards;
+    opacity: 0;
+    animation-delay: 2s;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #ff5f5f, 0 0 30px #ff8b8b; }
+    to { text-shadow: 0 0 20px #fff, 0 0 40px #ffbebe, 0 0 60px #fff; }
+  }
+
+  .cake {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin: 40px auto 20px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+
+  .cake .layer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cake .layer:nth-child(1) {
+    bottom: 0;
+    height: 50px;
+    background: #ff8b8b;
+  }
+
+  .cake .layer:nth-child(2) {
+    bottom: 50px;
+    height: 40px;
+    background: #ffd1d1;
+  }
+
+  .cake .layer:nth-child(3) {
+    bottom: 90px;
+    height: 30px;
+    background: #fff;
+  }
+
+  .plate {
+    width: 240px;
+    height: 20px;
+    background: #ffffff33;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  }
+
+  .candles {
+    position: absolute;
+    bottom: 115px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .candle {
+    width: 10px;
+    height: 40px;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .flame {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 15px;
+    background: radial-gradient(ellipse at center, #ffdb58 0%, #ff6f61 70%);
+    border-radius: 50%;
+    animation: flicker 0.2s infinite alternate;
+  }
+
+  @keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); opacity: 1; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+    100% { transform: translateX(-50%) scale(1); opacity: 1; }
+  }
+
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--hue), 100%, 70%);
+    top: -10px;
+    animation: fall 5s linear infinite;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+  }
+</style>
+</head>
+<body>
+
+<h1>🎉 Happy Birthday, Andeng! 🎂</h1>
+
+<div class="cake">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+
+  <div class="candles">
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+  </div>
+
+  <div class="plate"></div>
+</div>
+
+<p>happy 18th bday butandeng legal kana pwede mo nang asawahin si sevi kung babalik nga lang HAHAHAHAH  💖<br>
+Enjoy your special day, Andeng! 🎈✨</p>
+
+<script>
+// Confetti animation
+for (let i = 0; i < 50; i++) {
+  const conf = document.createElement("div");
+  conf.classList.add("confetti");
+  conf.style.left = Math.random() * 100 + "vw";
+  conf.style.animationDuration = 3 + Math.random() * 3 + "s";
+  conf.style.setProperty("--hue", Math.random() * 360);
+  conf.style.opacity = Math.random();
+  document.body.appendChild(conf);
+}
+</script>
+
+</body>
+</html>
